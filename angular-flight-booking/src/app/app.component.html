@@ -1,0 +1,68 @@
+<div id="app">
+  <nav class = "navbar navbar-expand navbar-dark bg-primary">
+    <a href="#" class="navbar-brand">FLIGHT BOOK</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="badge badge-success"routerLink="home">Home </a>
+      </li>
+   
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin"class="badge badge-dark" routerLink="board-admin">Admin Board</a>
+      </li>
+
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/flight" class="badge badge-secondary" routerLink="add-flight">Book Flight </a>
+      </li>
+      
+
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/flight" class="badge badge-secondary" routerLink="show-all-flight">Show Flight </a>
+      </li>
+      <!-- <li class="nav-item" *ngIf="!showModeratorBoard">
+        <a href="/mod" class="badge badge-success" routerLink="mod">Moderator Board</a>
+      </li> -->
+      <li class="nav-item">
+        <a href="/user" class="badge badge-success" *ngIf="!isLoggedIn" routerLink="user">User</a>
+      </li>
+      <li class="nav-item" *ngIf="showUserBoard">
+        <a href="/book-flight" class="badge badge-success" *ngIf="isLoggedIn" routerLink="book-flight">Book Flight</a>
+      </li>
+      <li class="nav-item">
+        <a href="/flight-search" class="badge badge-success" *ngIf="!isLoggedIn" routerLink="flight-search">Flight Search</a>
+      </li>
+     
+     
+      <li class="nav-item">
+        <a href="/search-pnr" class="badge badge-success"  *ngIf="isLoggedIn" routerLink="search-pnr">Booking History</a>
+      </li>
+
+
+      
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="badge badge-danger" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="badge badge-success" routerLink="login">Login</a>
+      </li>
+      
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="badge badge-success" routerLink="profile">{{ username }}</a>
+      </li>
+      
+
+      <li class="nav-item">
+        <a href class="badge badge-danger" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

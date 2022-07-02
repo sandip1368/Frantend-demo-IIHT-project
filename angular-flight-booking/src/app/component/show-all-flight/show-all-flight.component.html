@@ -1,0 +1,76 @@
+<section class="pb-5 header text-center">
+    <h1>LIST OF FLIGHT</h1>
+    <div class="container py-5 text-white">
+        <div class="row">
+            <div class="col-lg-20 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">FlightNo</th>
+                                        <th scope="col">AirLineName</th>
+                                        <th scope="col">FromPlace</th>
+                                        <th scope="col">ToPlace</th>
+                                        <th scope="col">Departure</th>
+                                        <th scope="col">Arrival</th>
+                                        <th scope="col">Instrument</th>
+                                        <th scope="col">BusinessSeat</th>
+                                        <!-- <th scope="col">NonBusinessSeat</th>
+                                        <th scope="col">Ticket</th>
+                                        <th scope="col">Meal</th>
+                                        <th scope="col">ways</th> -->
+                                        <th scope="col">Action</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let flight of flights; index as i">
+
+                                        <td>{{flight.flightNo}}</td>
+                                        <td>{{flight.airLinename}}</td>
+                                        <td>{{flight.fromPlace}}</td>
+                                        <td>{{flight.toPlace}}</td>
+                                        <td>{{flight.startDate}}</td>
+                                        <td>{{flight.endDate}}</td>
+                                        <td>{{flight.instrument}}</td>
+                                        <td>{{flight.businessSeat}}</td>
+                                        <!-- <td>{{flight.nonBusinessSeat}}</td>
+                                        <td>{{flight.ticket}}</td>
+                                        <td>{{flight.meal}}</td>
+                                        <td>{{flight.ways}}</td> -->
+                                        <td>
+                                        
+                                            <!-- <button routerLink="/updateFlight/{{flight.flightNo}}" type="button"  class="btn btn-outline-primary me-2" data-ds-toggle="model" data-bs-target="#updateFlight" >Edit</button>   
+                                            <button   type="button"  class="btn btn-outline-danger" (click)="deleteFlight(flight.flightNo)">cancel</button>
+                                       -->
+                                       <button routerLink="/updateFlight/{{flight.flightNo}}" type="button"  class="btn btn-outline-primary me-2"  data-toggle="modal" data-target="updateFlight" >Edit</button>   
+                                       <button   type="button"  class="btn btn-outline-danger" (click)="deleteFlight(flight.flightNo)">cancel</button>
+                                 
+                                              
+                                            
+
+                                           
+
+                                           
+                                        </td>
+
+                                    </tr>
+
+
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

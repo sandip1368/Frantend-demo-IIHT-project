@@ -1,0 +1,83 @@
+<div style="text-align:center">
+  <h1>Book Flight</h1>
+  <div class="wrapper bg-White">
+    <div style="text-align:center">
+
+      <span class="input-group-text" id="inputGroup-sizing-default">Flight No
+      </span>
+
+      <input type="number" [(ngModel)]="ticket.flightNo" placeholder="flightNo" class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+
+    </div>
+    <div style="text-align:center">
+      <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+      <input type="text" [(ngModel)]="ticket.passenger_name" placeholder="passenger_name" class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+    </div>
+
+    <br />
+
+    <div style="text-align:center">
+      <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+      <input [(ngModel)]="ticket.email" placeholder="Email" type="text" class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+    </div>
+
+    <br />
+
+    <div style="text-align:center">
+      <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
+      <input [(ngModel)]="ticket.passenger_age" placeholder="Age" type="text" class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+    </div>
+    <br />
+
+    <div style="text-align:center">
+
+      <span class="input-group-text" id="inputGroup-sizing-default">Seat Number
+      </span>
+
+      <input type="text" [(ngModel)]="ticket.passenger_seatNo" placeholder="Seat Number" class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+
+    </div>
+    <br />
+    <div style="text-align:center">
+
+      <span class="input-group-text" id="inputGroup-sizing-default">Meal
+      </span>
+
+      <input type="text" [(ngModel)]="ticket.optMeal" placeholder="meal " class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+
+    </div>
+
+    <br />
+    <div style="text-align:center">
+
+      <span class="input-group-text" id="inputGroup-sizing-default">No Of Seat
+      </span>
+
+      <input type="number" [(ngModel)]="ticket.noOfSeats" placeholder="No Of Seat" class="form-control"
+        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" [(ngModel)]="ticket.gender" value="Male" type="radio" name="flexRadioDefault"
+        id="flexRadioDefault1" />
+      <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" [(ngModel)]="ticket.gender" value="Female" name="flexRadioDefault"
+        id="flexRadioDefault2" checked />
+      <label class="form-check-label" for="flexRadioDefault2"> Female </label>
+    </div>
+  </div>
+</div>
+<div>
+  <button routerLink="/thankyou" class="btn btn-primary btn-lg" (click)="bookFlight()">
+    Book Flight
+  </button>
+</div>

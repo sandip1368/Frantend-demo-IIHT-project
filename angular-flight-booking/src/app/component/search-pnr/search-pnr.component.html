@@ -1,0 +1,136 @@
+
+<br/>
+<div class="form-outline mb-4">
+    <input type="search" [(ngModel)]="bookTicketpdf.pnrNumber" required placeholder="Enter PNR Number"class="form-control" id="datatable-search-input">
+</div>
+<div id="datatable">
+</div>
+<div>
+  <button  class="btn btn-primary btn-lg" (click)="pnrSearch()">
+      Search
+  </button>
+</div>
+<br/>
+<div class="form-outline mb-4">
+    <input type="search" [(ngModel)]="bookTicketpdf.email" required placeholder="Enter Email"class="form-control" id="datatable-search-input">
+  </div>
+<div id="datatable">
+</div>
+<div>
+  <button class="btn btn-primary btn-lg" (click)="searchEmail()">
+      Search
+  </button>
+</div>
+<br/>
+<h1 class="display-3">Booking History</h1>
+<div *ngIf=isPnrSearch >
+  
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+        <th scope="col">Flight No</th>
+        <th scope="col"> Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Pnr Number</th>
+        <th scope="col">Seat No</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Action</th>
+       
+    </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let t of tickets; index as i">
+      <td>{{t.flightNo}}</td>
+      <td>{{t.passenger_name}}</td>
+      <td>{{t.email}}</td>
+      <td>{{t.pnrNumber}}</td>
+      <td>{{t.passenger_seatNo}}</td>
+      <td>{{t.gender}}</td>
+     
+      <td> <button (click)="downloadPdf(t.pnrNumber)" class="btn btn-danger">Download</button>   </td>
+    </tr>
+</tbody> 
+</table>
+ 
+</div>
+
+
+
+
+<br/>
+<div *ngIf=isEmailSearch >
+  
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+          <th scope="col">Flight No</th>
+          <th scope="col"> Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Pnr Number</th>
+          <th scope="col">Seat No</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Action</th>
+         
+      </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let t of tickets; index as i">
+        <td>{{t.flightNo}}</td>
+        <td>{{t.passenger_name}}</td>
+        <td>{{t.email}}</td>
+        <td>{{t.pnrNumber}}</td>
+        <td>{{t.passenger_seatNo}}</td>
+        <td>{{t.gender}}</td>
+    
+
+       
+
+     
+  </table>
+  
+  </div>
+  
+  <br/> -->
+
+
+<!-- 
+?????????????????????????? -->
+
+<div id="content" #content>
+  <div *ngIf="hideContent" class ="text-center" >
+    <h1>Flight Details</h1>
+    <div class="row">
+      <div class ="col-md-2"></div>
+      <div class="col-md-4">
+        <p> From<b>{{flightpdf1.fromPlace}}</b></p>
+        <p> To <b>{{flightpdf1.toPlace}}</b></p>
+        <p> Ticket No <b>{{flightpdf1.ticket}}</b></p>
+
+        
+        
+  </div>
+  <div class ="col-md-4">
+    
+        <p> Name -<b>{{bookTicketpdf1.passenger_name}}</b></p>
+        <p> Email -<b>{{bookTicketpdf1.email}}</b></p>
+        <p> Seat No -<b>{{bookTicketpdf1.passenger_seatNo}}</b></p>
+        <p> Age  -<b>{{bookTicketpdf1.passenger_age}}</b></p>
+        <p> Gender -<b>{{bookTicketpdf1.gender}}</b></p>
+        <p> PRN -<b>{{bookTicketpdf1.pnrNumber}}</b></p>
+  
+      </div>
+    <div class="col-md-2"></div>
+	</div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
